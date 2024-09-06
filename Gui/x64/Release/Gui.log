@@ -1,0 +1,60 @@
+﻿  Reading Qt configuration (D:/ProgramData/Qt/Qt5.14.2/5.14.2/msvc2017_64/bin/qmake)
+  FineTuning.cpp
+  RectItem.cpp
+  GraphicsView.cpp
+  Gui.cpp
+  ImageItem.cpp
+  main.cpp
+E:\0_PROJECTS\C++_VisualStudio\Copper_Datasets\CD_MSBuild\Gui\Gui.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\0_PROJECTS\C++_VisualStudio\Copper_Datasets\CD_MSBuild\Gui\ImageItem.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\0_PROJECTS\C++_VisualStudio\Copper_Datasets\CD_MSBuild\Gui\GraphicsView.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\0_PROJECTS\C++_VisualStudio\Copper_Datasets\CD_MSBuild\Gui\RectItem.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\0_PROJECTS\C++_VisualStudio\Copper_Datasets\CD_MSBuild\Gui\FineTuning.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\0_PROJECTS\C++_VisualStudio\Copper_Datasets\CD_MSBuild\Gui\ImageItem.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\0_PROJECTS\C++_VisualStudio\Copper_Datasets\CD_MSBuild\Gui\graphicsView.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\0_PROJECTS\C++_VisualStudio\Copper_Datasets\CD_MSBuild\Gui\GraphicsView.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\0_PROJECTS\C++_VisualStudio\Copper_Datasets\CD_MSBuild\Gui\RectItem.cpp(125,13): warning C4056: 浮点常量算术溢出
+E:\0_PROJECTS\C++_VisualStudio\Copper_Datasets\CD_MSBuild\Gui\imageItem.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\0_PROJECTS\C++_VisualStudio\Copper_Datasets\CD_MSBuild\Gui\imageItem.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\0_PROJECTS\C++_VisualStudio\Copper_Datasets\CD_MSBuild\Gui\graphicsView.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\0_PROJECTS\C++_VisualStudio\Copper_Datasets\CD_MSBuild\Gui\graphicsView.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\0_PROJECTS\C++_VisualStudio\Copper_Datasets\CD_MSBuild\Gui\ImageItem.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\0_PROJECTS\C++_VisualStudio\Copper_Datasets\CD_MSBuild\Gui\ImageItem.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\0_PROJECTS\C++_VisualStudio\Copper_Datasets\CD_MSBuild\Gui\GraphicsView.cpp(164,86): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+E:\0_PROJECTS\C++_VisualStudio\Copper_Datasets\CD_MSBuild\Gui\GraphicsView.cpp(190,91): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+E:\0_PROJECTS\C++_VisualStudio\Copper_Datasets\CD_MSBuild\Gui\GraphicsView.cpp(191,91): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+E:\0_PROJECTS\C++_VisualStudio\Copper_Datasets\CD_MSBuild\Gui\Gui.cpp(92,100): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+E:\0_PROJECTS\C++_VisualStudio\Copper_Datasets\CD_MSBuild\Gui\Gui.cpp(100,55): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+E:\0_PROJECTS\C++_VisualStudio\Copper_Datasets\CD_MSBuild\Gui\Gui.cpp(105,55): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+E:\0_PROJECTS\C++_VisualStudio\Copper_Datasets\CD_MSBuild\Gui\Gui.cpp(110,55): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+E:\0_PROJECTS\C++_VisualStudio\Copper_Datasets\CD_MSBuild\Gui\Gui.cpp(164,100): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+E:\0_PROJECTS\C++_VisualStudio\Copper_Datasets\CD_MSBuild\Gui\Gui.cpp(184,50): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+E:\0_PROJECTS\C++_VisualStudio\Copper_Datasets\CD_MSBuild\Gui\GraphicsView.cpp(607,70): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+E:\0_PROJECTS\C++_VisualStudio\Copper_Datasets\CD_MSBuild\Gui\GraphicsView.cpp(611,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  qrc_Gui.cpp
+  moc_Gui.cpp
+  moc_GraphicsView.cpp
+  moc_ImageItem.cpp
+  moc_FineTuning.cpp
+E:\0_PROJECTS\C++_VisualStudio\Copper_Datasets\CD_MSBuild\Gui\GraphicsView.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\0_PROJECTS\C++_VisualStudio\Copper_Datasets\CD_MSBuild\Gui\ImageItem.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\0_PROJECTS\C++_VisualStudio\Copper_Datasets\CD_MSBuild\Gui\GraphicsView.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\0_PROJECTS\C++_VisualStudio\Copper_Datasets\CD_MSBuild\Gui\imageItem.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\0_PROJECTS\C++_VisualStudio\Copper_Datasets\CD_MSBuild\Gui\graphicsView.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\0_PROJECTS\C++_VisualStudio\Copper_Datasets\CD_MSBuild\Gui\ImageItem.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\0_PROJECTS\C++_VisualStudio\Copper_Datasets\CD_MSBuild\Gui\ImageItem.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+FineTuning.obj : error LNK2001: 无法解析的外部符号 "double __cdecl cv::threshold(class cv::debug_build_guard::_InputArray const &,class cv::debug_build_guard::_OutputArray const &,double,double,int)" (?threshold@cv@@YANAEBV_InputArray@debug_build_guard@1@AEBV_OutputArray@31@NNH@Z)
+FineTuning.obj : error LNK2001: 无法解析的外部符号 "void __cdecl cv::cvtColor(class cv::debug_build_guard::_InputArray const &,class cv::debug_build_guard::_OutputArray const &,int,int)" (?cvtColor@cv@@YAXAEBV_InputArray@debug_build_guard@1@AEBV_OutputArray@31@HH@Z)
+FineTuning.obj : error LNK2001: 无法解析的外部符号 "void __cdecl cv::extractChannel(class cv::debug_build_guard::_InputArray const &,class cv::debug_build_guard::_OutputArray const &,int)" (?extractChannel@cv@@YAXAEBV_InputArray@debug_build_guard@1@AEBV_OutputArray@31@H@Z)
+FineTuning.obj : error LNK2001: 无法解析的外部符号 "void __cdecl cv::absdiff(class cv::debug_build_guard::_InputArray const &,class cv::debug_build_guard::_InputArray const &,class cv::debug_build_guard::_OutputArray const &)" (?absdiff@cv@@YAXAEBV_InputArray@debug_build_guard@1@0AEBV_OutputArray@31@@Z)
+FineTuning.obj : error LNK2001: 无法解析的外部符号 "void __cdecl cv::split(class cv::debug_build_guard::_InputArray const &,class cv::debug_build_guard::_OutputArray const &)" (?split@cv@@YAXAEBV_InputArray@debug_build_guard@1@AEBV_OutputArray@31@@Z)
+GraphicsView.obj : error LNK2001: 无法解析的外部符号 "void __cdecl cv::drawContours(class cv::debug_build_guard::_InputOutputArray const &,class cv::debug_build_guard::_InputArray const &,int,class cv::Scalar_<double> const &,int,int,class cv::debug_build_guard::_InputArray const &,int,class cv::Point_<int>)" (?drawContours@cv@@YAXAEBV_InputOutputArray@debug_build_guard@1@AEBV_InputArray@31@HAEBV?$Scalar_@N@1@HH1HV?$Point_@H@1@@Z)
+GraphicsView.obj : error LNK2001: 无法解析的外部符号 "bool __cdecl cv::imwrite(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class cv::debug_build_guard::_InputArray const &,class std::vector<int,class std::allocator<int> > const &)" (?imwrite@cv@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV_InputArray@debug_build_guard@1@AEBV?$vector@HV?$allocator@H@std@@@3@@Z)
+GraphicsView.obj : error LNK2001: 无法解析的外部符号 "class cv::debug_build_guard::_InputOutputArray const & __cdecl cv::noArray(void)" (?noArray@cv@@YAAEBV_InputOutputArray@debug_build_guard@1@XZ)
+GraphicsView.obj : error LNK2001: 无法解析的外部符号 "void __cdecl cv::addWeighted(class cv::debug_build_guard::_InputArray const &,double,class cv::debug_build_guard::_InputArray const &,double,double,class cv::debug_build_guard::_OutputArray const &,int)" (?addWeighted@cv@@YAXAEBV_InputArray@debug_build_guard@1@N0NNAEBV_OutputArray@31@H@Z)
+GraphicsView.obj : error LNK2001: 无法解析的外部符号 "void __cdecl cv::GaussianBlur(class cv::debug_build_guard::_InputArray const &,class cv::debug_build_guard::_OutputArray const &,class cv::Size_<int>,double,double,int)" (?GaussianBlur@cv@@YAXAEBV_InputArray@debug_build_guard@1@AEBV_OutputArray@31@V?$Size_@H@1@NNH@Z)
+GraphicsView.obj : error LNK2001: 无法解析的外部符号 "void __cdecl cv::convexHull(class cv::debug_build_guard::_InputArray const &,class cv::debug_build_guard::_OutputArray const &,bool,bool)" (?convexHull@cv@@YAXAEBV_InputArray@debug_build_guard@1@AEBV_OutputArray@31@_N2@Z)
+GraphicsView.obj : error LNK2001: 无法解析的外部符号 "void __cdecl cv::Canny(class cv::debug_build_guard::_InputArray const &,class cv::debug_build_guard::_OutputArray const &,double,double,int,bool)" (?Canny@cv@@YAXAEBV_InputArray@debug_build_guard@1@AEBV_OutputArray@31@NNH_N@Z)
+GraphicsView.obj : error LNK2001: 无法解析的外部符号 "void __cdecl cv::findContours(class cv::debug_build_guard::_InputArray const &,class cv::debug_build_guard::_OutputArray const &,int,int,class cv::Point_<int>)" (?findContours@cv@@YAXAEBV_InputArray@debug_build_guard@1@AEBV_OutputArray@31@HHV?$Point_@H@1@@Z)
+GraphicsView.obj : error LNK2001: 无法解析的外部符号 "void __cdecl cv::resize(class cv::debug_build_guard::_InputArray const &,class cv::debug_build_guard::_OutputArray const &,class cv::Size_<int>,double,double,int)" (?resize@cv@@YAXAEBV_InputArray@debug_build_guard@1@AEBV_OutputArray@31@V?$Size_@H@1@NNH@Z)
+E:\0_PROJECTS\C++_VisualStudio\Copper_Datasets\CD_MSBuild\x64\Release\Gui.exe : fatal error LNK1120: 14 个无法解析的外部命令

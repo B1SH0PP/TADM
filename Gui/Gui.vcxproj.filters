@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>qrc;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header &amp; Source Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header &amp; Source Files\Item">
+      <UniqueIdentifier>{25985b1e-ff63-4f67-b42b-1b0780859e00}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="Gui.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <QtMoc Include="Gui.h">
+      <Filter>Header &amp; Source Files</Filter>
+    </QtMoc>
+    <None Include="Gui.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <ResourceCompile Include="Gui.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Gui.cpp">
+      <Filter>Header &amp; Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Header &amp; Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphicsView.cpp">
+      <Filter>Header &amp; Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageItem.cpp">
+      <Filter>Header &amp; Source Files\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="RectItem.cpp">
+      <Filter>Header &amp; Source Files\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="FineTuning.cpp">
+      <Filter>Header &amp; Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="Gui.ui">
+      <Filter>Header &amp; Source Files</Filter>
+    </QtUic>
+    <QtUic Include="FineTuning.ui">
+      <Filter>Header &amp; Source Files</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="GraphicsView.h">
+      <Filter>Header &amp; Source Files</Filter>
+    </QtMoc>
+    <QtMoc Include="ImageItem.h">
+      <Filter>Header &amp; Source Files\Item</Filter>
+    </QtMoc>
+    <QtMoc Include="FineTuning.h">
+      <Filter>Header &amp; Source Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="RectItem.h">
+      <Filter>Header &amp; Source Files\Item</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

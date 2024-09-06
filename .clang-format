@@ -1,0 +1,94 @@
+# Google C/C++ Code Style settings (with 4-space)
+# Refered to https://github.com/kehanXue/google-style-clang-format/blob/master/.clang-format
+
+Language: Cpp
+BasedOnStyle: Google
+AccessModifierOffset: -3  # `public`&`private` indent; (-3) -> indent 1 space
+AlignAfterOpenBracket: Align
+AlignConsecutiveAssignments: AcrossComments  # 对齐(对齐等号`=`)连续赋值语句. AcrossEmptyLinesAndComments:包括中间有空行和注释
+# AlignConsecutiveDeclarations: AcrossEmptyLinesAndComments  # 对齐连续声明语句.
+AlignOperands: Align
+AlignConsecutiveBitFields: true  # 对齐位域结构体的`:`
+
+AllowAllArgumentsOnNextLine: true
+AllowAllConstructorInitializersOnNextLine: true
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
+BreakConstructorInitializersBeforeComma: false
+
+AllowAllParametersOfDeclarationOnNextLine: false  # 是否允许函数所有形参全部放在下一行
+AllowShortBlocksOnASingleLine: Empty
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortIfStatementsOnASingleLine: Never  # To avoid conflict, set this "Never" and each "if statement" should include brace when coding
+AllowShortLambdasOnASingleLine: Inline
+AllowShortLoopsOnASingleLine: false
+AlwaysBreakAfterReturnType: None
+AlwaysBreakTemplateDeclarations: Yes
+BinPackArguments: false  # 原本是true
+BinPackParameters: false  # 使函数形参和模板参数等不被强制放在一行中
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterCaseLabel: false
+  AfterClass: false
+  AfterStruct: false
+  AfterControlStatement: Never
+  AfterEnum: true  # 枚举值分行书写
+  AfterFunction: false
+  AfterNamespace: false
+  AfterUnion: false
+  AfterExternBlock: false
+  BeforeCatch: false
+  BeforeElse: false  # 是否在else语句之前换行
+  BeforeLambdaBody: false
+  IndentBraces: false
+  SplitEmptyFunction: false
+  SplitEmptyRecord: false
+  SplitEmptyNamespace: false
+BreakBeforeBinaryOperators: None
+BreakBeforeTernaryOperators: true
+BreakConstructorInitializers: BeforeColon
+BreakInheritanceList: BeforeColon
+ColumnLimit: 145  # 145 - VS2022-130%放大 
+CompactNamespaces: false
+ContinuationIndentWidth: 8
+Cpp11BracedListStyle: true
+DerivePointerAlignment: false  # Make sure the * or & align on the left
+EmptyLineBeforeAccessModifier: LogicalBlock
+FixNamespaceComments: true
+IncludeBlocks: Preserve  # Preserve: preserve empty lines and chunks between header files
+IndentCaseLabels: true
+IndentPPDirectives: BeforeHash  # whether `ifdef` maintain indentation
+IndentWidth: 4
+KeepEmptyLinesAtTheStartOfBlocks: true
+MaxEmptyLinesToKeep: 2
+NamespaceIndentation: None
+ObjCSpaceAfterProperty: false
+ObjCSpaceBeforeProtocolList: true
+PointerAlignment: Left
+PenaltyBreakTemplateDeclaration: 0  # 在模板声明之前换行的惩罚
+PenaltyBreakBeforeFirstCallParameter: 0  # 在函数调用的第一个参数之前换行的惩罚
+ReflowComments: false
+SeparateDefinitionBlocks: Always   # (support since clang-format-14)
+SpaceAfterCStyleCast: false
+SpaceAfterLogicalNot: false
+SpaceAfterTemplateKeyword: true
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeCpp11BracedList: false
+SpaceBeforeCtorInitializerColon: true
+SpaceBeforeInheritanceColon: true
+SpaceBeforeParens: ControlStatements
+SpaceBeforeRangeBasedForLoopColon: true
+SpaceBeforeSquareBrackets: false
+SpaceInEmptyParentheses: false
+
+SpacesBeforeTrailingComments: 2
+
+SpacesInAngles: false
+SpacesInCStyleCastParentheses: false
+SpacesInContainerLiterals: false
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+Standard: c++11
+TabWidth: 4
+UseTab: Never  # use "space" instead of "tab"
+SortIncludes: Never  # whether sort the header files

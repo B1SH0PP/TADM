@@ -1,0 +1,11 @@
+.vs/
+bin/
+x64/
+CopperAlloyDatasets/
+data/0.jpg
+data/1.jpg
+data/1_cropped.png
+data/2.jpg
+data/2_cropped.png
+data/3.jpg
+data/3_cropped.png
