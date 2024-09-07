@@ -57,7 +57,6 @@ RectItem::RectItem(QGraphicsItem* parent)
 
     updateHandlesPos();
 
-    // 存储 Rect 对象地址
     m_objectAddresses_vec.push_back(this);
 }
 
@@ -83,14 +82,14 @@ void RectItem::updateHandlesPos() {
     auto s = c_handle_size;
     auto b = boundingRect();
 
-    m_handles[MOUSEHANDLE::handleTopLeft] = QRectF(b.left(), b.top(), s, s);
-    m_handles[MOUSEHANDLE::handleTopMiddle] = QRectF(b.center().x() - s / 2, b.top(), s, s);
-    m_handles[MOUSEHANDLE::handleTopRight] = QRectF(b.right() - s, b.top(), s, s);
-    m_handles[MOUSEHANDLE::handleMiddleLeft] = QRectF(b.left(), b.center().y() - s / 2, s, s);
-    m_handles[MOUSEHANDLE::handleMiddleRight] = QRectF(b.right() - s, b.center().y() - s / 2, s, s);
-    m_handles[MOUSEHANDLE::handleBottomLeft] = QRectF(b.left(), b.bottom() - s, s, s);
+    m_handles[MOUSEHANDLE::handleTopLeft]      = QRectF(b.left(), b.top(), s, s);
+    m_handles[MOUSEHANDLE::handleTopMiddle]    = QRectF(b.center().x() - s / 2, b.top(), s, s);
+    m_handles[MOUSEHANDLE::handleTopRight]     = QRectF(b.right() - s, b.top(), s, s);
+    m_handles[MOUSEHANDLE::handleMiddleLeft]   = QRectF(b.left(), b.center().y() - s / 2, s, s);
+    m_handles[MOUSEHANDLE::handleMiddleRight]  = QRectF(b.right() - s, b.center().y() - s / 2, s, s);
+    m_handles[MOUSEHANDLE::handleBottomLeft]   = QRectF(b.left(), b.bottom() - s, s, s);
     m_handles[MOUSEHANDLE::handleBottomMiddle] = QRectF(b.center().x() - s / 2, b.bottom() - s, s, s);
-    m_handles[MOUSEHANDLE::handleBottomRight] = QRectF(b.right() - s, b.bottom() - s, s, s);
+    m_handles[MOUSEHANDLE::handleBottomRight]  = QRectF(b.right() - s, b.bottom() - s, s, s);
 }
 
 bool RectItem::isHover() {
@@ -104,7 +103,7 @@ QCursor RectItem::getRotateCursor(const QPointF& point) {
     if (boundingRect().contains(mapFromScene(point)))
         return QCursor();
 
-    auto srcRect = rect();
+    auto srcRect   = rect();
     auto frameRect = srcRect.adjusted(-c_rotate_tolerance, -c_rotate_tolerance, c_rotate_tolerance, c_rotate_tolerance);
 
     QPointF innerPoint = mapFromScene(point);
@@ -112,21 +111,21 @@ QCursor RectItem::getRotateCursor(const QPointF& point) {
     if (!frameRect.contains(innerPoint))
         return QCursor();
 
-    m_points[MOUSEROTATEHANDLE::handleRotateTopLeft] = srcRect.topLeft();
-    m_points[MOUSEROTATEHANDLE::handleRotateTopMiddle] = QPointF(srcRect.center().x(), srcRect.top());
-    m_points[MOUSEROTATEHANDLE::handleRotateTopRight] = srcRect.topRight();
-    m_points[MOUSEROTATEHANDLE::handleRotateMiddleRight] = QPointF(srcRect.right(), srcRect.center().y());
-    m_points[MOUSEROTATEHANDLE::handleRotateBottomRight] = srcRect.bottomRight();
+    m_points[MOUSEROTATEHANDLE::handleRotateTopLeft]      = srcRect.topLeft();
+    m_points[MOUSEROTATEHANDLE::handleRotateTopMiddle]    = QPointF(srcRect.center().x(), srcRect.top());
+    m_points[MOUSEROTATEHANDLE::handleRotateTopRight]     = srcRect.topRight();
+    m_points[MOUSEROTATEHANDLE::handleRotateMiddleRight]  = QPointF(srcRect.right(), srcRect.center().y());
+    m_points[MOUSEROTATEHANDLE::handleRotateBottomRight]  = srcRect.bottomRight();
     m_points[MOUSEROTATEHANDLE::handleRotateBottomMiddle] = QPointF(srcRect.center().x(), srcRect.bottom());
-    m_points[MOUSEROTATEHANDLE::handleRotateBottomLeft] = srcRect.bottomLeft();
-    m_points[MOUSEROTATEHANDLE::handleRotateMiddleLeft] = QPointF(srcRect.left(), srcRect.center().y());
+    m_points[MOUSEROTATEHANDLE::handleRotateBottomLeft]   = srcRect.bottomLeft();
+    m_points[MOUSEROTATEHANDLE::handleRotateMiddleLeft]   = QPointF(srcRect.left(), srcRect.center().y());
 
     auto ret = MOUSEROTATEHANDLE::handleRotateNone;
-    float l = 3.4028235E38;
+    float l  = 3.4028235E38;
     for (auto& iter : m_points) {
         auto length = getLength2(iter.second, innerPoint);
         if (length < l) {
-            l = length;
+            l   = length;
             ret = iter.first;
         }
     }
@@ -145,13 +144,13 @@ QCursor RectItem::getRotateCursor(const QPointF& point) {
 
 void RectItem::setRotateStart(const QPointF& point) {
     m_mouseRotateStart = point;
-    m_fLastAngle = rotation();
+    m_fLastAngle       = rotation();
 }
 
 void RectItem::setRotateEnd(const QPointF& point) {
     QPointF ori = mapToScene(transformOriginPoint());
-    QPointF v1 = m_mouseRotateStart - ori;
-    QPointF v2 = point - ori;
+    QPointF v1  = m_mouseRotateStart - ori;
+    QPointF v2  = point - ori;
 
     float angle = std::atan2f(v2.y(), v2.x()) - std::atan2f(v1.y(), v1.x());
 
@@ -222,7 +221,7 @@ void RectItem::hoverMoveEvent(QGraphicsSceneHoverEvent* event) {
 void RectItem::mouseMoveEvent(QGraphicsSceneMouseEvent* event) {
     if (MOUSEHANDLE::handleNone != m_bhandleSelected) {
 
-        QPointF tempPoint = event->pos();
+        QPointF tempPoint  = event->pos();
         QPointF tempPoint1 = mapToScene(event->pos());
 
         interactiveResize(event->pos());
@@ -233,24 +232,21 @@ void RectItem::mouseMoveEvent(QGraphicsSceneMouseEvent* event) {
 }
 
 void RectItem::mousePressEvent(QGraphicsSceneMouseEvent* event) {
-    // @1 - 这里发现, 如果点击的不是图像左上角点 (场景原点) 则`m_bhandleSelected`使用`mapToScene()`后会不同, 若是左上角点则一致 (handleTopLeft = 1)
     m_bhandleSelected = handleAt(event->pos());
-    //m_bhandleSelected = handleAt(mapToScene(event->pos()));
     if (MOUSEHANDLE::handleNone != m_bhandleSelected) {
-        m_mousePressPos = event->pos();
-        //m_mousePressPos = mapToScene(event->pos());
+        m_mousePressPos  = event->pos();
         m_mousePressRect = boundingRect();
     }
     QGraphicsRectItem::mousePressEvent(event);
 }
 
 void RectItem::mouseReleaseEvent(QGraphicsSceneMouseEvent* event) {
-    auto rr = this->rect();
+    auto rr    = this->rect();
     auto angle = qDegreesToRadians(this->rotation());
 
-    auto p1 = rr.center();
+    auto p1     = rr.center();
     auto origin = this->transformOriginPoint();
-    QPointF p2 = QPointF(0, 0);
+    QPointF p2  = QPointF(0, 0);
 
     p2.setX(origin.x() + qCos(angle) * (p1.x() - origin.x()) - qSin(angle) * (p1.y() - origin.y()));
     p2.setY(origin.y() + qSin(angle) * (p1.x() - origin.x()) + qCos(angle) * (p1.y() - origin.y()));
@@ -262,8 +258,8 @@ void RectItem::mouseReleaseEvent(QGraphicsSceneMouseEvent* event) {
     updateHandlesPos();
 
     m_bhandleSelected = MOUSEHANDLE::handleNone;
-    m_mousePressPos = QPointF();
-    m_mousePressRect = QRectF();
+    m_mousePressPos   = QPointF();
+    m_mousePressRect  = QRectF();
     this->update();
     QGraphicsRectItem::mouseReleaseEvent(event);
 }
@@ -290,7 +286,6 @@ void RectItem::keyPressEvent(QKeyEvent* event) {
             event->setAccepted(false);
             break;
     }
-    //QGraphicsRectItem::keyPressEvent(event);
 }
 
 RectItem::MOUSEHANDLE RectItem::handleAt(const QPointF& point) {
@@ -303,17 +298,17 @@ RectItem::MOUSEHANDLE RectItem::handleAt(const QPointF& point) {
 
 void RectItem::interactiveResize(const QPointF& mousePos) {
     auto offset = c_handle_size + c_handle_space;
-    auto bRect = boundingRect();
-    auto rr = this->rect();
-    auto diff = QPointF(0, 0);
+    auto bRect  = boundingRect();
+    auto rr     = this->rect();
+    auto diff   = QPointF(0, 0);
 
     prepareGeometryChange();
 
     if (m_bhandleSelected == MOUSEHANDLE::handleTopLeft) {
         auto fromX = m_mousePressRect.left();
         auto fromY = m_mousePressRect.top();
-        auto toX = fromX + mousePos.x() - m_mousePressRect.x();
-        auto toY = fromY + mousePos.y() - m_mousePressRect.y();
+        auto toX   = fromX + mousePos.x() - m_mousePressRect.x();
+        auto toY   = fromY + mousePos.y() - m_mousePressRect.y();
 
         if (!(toX - fromX >= rr.width() || toY - fromY >= rr.height())) {
             diff.setX(toX - fromX);
@@ -326,7 +321,7 @@ void RectItem::interactiveResize(const QPointF& mousePos) {
         }
     } else if (m_bhandleSelected == MOUSEHANDLE::handleTopMiddle) {
         auto fromY = m_mousePressRect.top();
-        auto toY = fromY + mousePos.y() - m_mousePressPos.y();
+        auto toY   = fromY + mousePos.y() - m_mousePressPos.y();
 
         if (!(toY - fromY >= rr.height())) {
             diff.setY(toY - fromY);
@@ -337,8 +332,8 @@ void RectItem::interactiveResize(const QPointF& mousePos) {
     } else if (m_bhandleSelected == MOUSEHANDLE::handleTopRight) {
         auto fromX = m_mousePressRect.right();
         auto fromY = m_mousePressRect.top();
-        auto toX = fromX + mousePos.x() - m_mousePressPos.x();
-        auto toY = fromY + mousePos.y() - m_mousePressPos.y();
+        auto toX   = fromX + mousePos.x() - m_mousePressPos.x();
+        auto toY   = fromY + mousePos.y() - m_mousePressPos.y();
 
         if (!(fromX - toX >= rr.width() || toY - fromY >= rr.height())) {
             diff.setX(toX - fromX);
@@ -351,7 +346,7 @@ void RectItem::interactiveResize(const QPointF& mousePos) {
         }
     } else if (m_bhandleSelected == MOUSEHANDLE::handleMiddleLeft) {
         auto fromX = m_mousePressRect.left();
-        auto toX = fromX + mousePos.x() - m_mousePressPos.x();
+        auto toX   = fromX + mousePos.x() - m_mousePressPos.x();
 
         if (!(toX - fromX >= rr.width())) {
             diff.setX(toX - fromX);
@@ -361,7 +356,7 @@ void RectItem::interactiveResize(const QPointF& mousePos) {
         }
     } else if (m_bhandleSelected == MOUSEHANDLE::handleMiddleRight) {
         auto fromX = m_mousePressRect.right();
-        auto toX = fromX + mousePos.x() - m_mousePressPos.x();
+        auto toX   = fromX + mousePos.x() - m_mousePressPos.x();
 
         if (!(fromX - toX >= rr.width())) {
             diff.setX(toX - fromX);
@@ -372,8 +367,8 @@ void RectItem::interactiveResize(const QPointF& mousePos) {
     } else if (m_bhandleSelected == MOUSEHANDLE::handleBottomLeft) {
         auto fromX = m_mousePressRect.left();
         auto fromY = m_mousePressRect.bottom();
-        auto toX = fromX + mousePos.x() - m_mousePressPos.x();
-        auto toY = fromY + mousePos.y() - m_mousePressPos.y();
+        auto toX   = fromX + mousePos.x() - m_mousePressPos.x();
+        auto toY   = fromY + mousePos.y() - m_mousePressPos.y();
 
         if (!(toX - fromX >= rr.width() || fromY - toY >= rr.height())) {
             diff.setX(toX - fromX);
@@ -386,7 +381,7 @@ void RectItem::interactiveResize(const QPointF& mousePos) {
         }
     } else if (m_bhandleSelected == MOUSEHANDLE::handleBottomMiddle) {
         auto fromY = m_mousePressRect.bottom();
-        auto toY = fromY + mousePos.y() - m_mousePressPos.y();
+        auto toY   = fromY + mousePos.y() - m_mousePressPos.y();
 
         if (!(fromY - toY >= rr.height())) {
             diff.setY(toY - fromY);
@@ -397,8 +392,8 @@ void RectItem::interactiveResize(const QPointF& mousePos) {
     } else if (m_bhandleSelected == MOUSEHANDLE::handleBottomRight) {
         auto fromX = m_mousePressRect.right();
         auto fromY = m_mousePressRect.bottom();
-        auto toX = fromX + mousePos.x() - m_mousePressPos.x();
-        auto toY = fromY + mousePos.y() - m_mousePressPos.y();
+        auto toX   = fromX + mousePos.x() - m_mousePressPos.x();
+        auto toY   = fromY + mousePos.y() - m_mousePressPos.y();
 
         if (!(fromX - toX >= rr.width() || fromY - toY >= rr.height())) {
             diff.setX(toX - fromX);

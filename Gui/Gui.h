@@ -33,8 +33,6 @@ class GUI : public QMainWindow {
     void setImage();
     void saveImage();
     QImage Mat2QImage(const cv::Mat& mat);
-    //void GetConvexHull();
-    //void GetFineTuning();
 
  public slots:
     void addRect(QRectF Rect);
@@ -44,7 +42,7 @@ class GUI : public QMainWindow {
 
  private:
     Ui::GUIClass* ui;
-    GraphicsView* m_viewBox1;  // 视图窗口
+    GraphicsView* m_viewBox1;
     GraphicsView* m_viewBox2;
     GraphicsView* m_viewBox3;
 };

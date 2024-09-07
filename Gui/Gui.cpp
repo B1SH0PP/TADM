@@ -10,27 +10,20 @@ GUI::GUI(QWidget* parent)
       m_viewBox3(new GraphicsView(this)) {
     ui->setupUi(this);
 
-    //ui->MainToolBar->addWidget(ui->OpenButton);
-    //ui->MainToolBar->addWidget(ui->SaveButton);
-    //ui->MainToolBar->addWidget(ui->Left);
-    //ui->MainToolBar->addWidget(ui->Right);
-
     ui->viewBox_1->layout()->addWidget(m_viewBox1);
     ui->viewBox_2->layout()->addWidget(m_viewBox2);
     ui->viewBox_3->layout()->addWidget(m_viewBox3);
 
-    // QTableWidget
     ui->tableWidget->setRowCount(1);
     ui->tableWidget->setColumnCount(1);
     QStringList headers;
     headers << "Rect Size";
     ui->tableWidget->setHorizontalHeaderLabels(headers);
     ui->tableWidget->setStyleSheet(
-            "QTableWidget::item { border: 1px solid black; }"  // 设置单元格的边框
-            "QTableWidget { gridline-color: black; }"          // 设置表格的分割线颜色
-            "QHeaderView::section { border: 1px solid red;}"   // 设置表头的分割线颜色
-    );
-    ui->tableWidget->setColumnWidth(0, 235);  // 列宽像素
+            "QTableWidget::item { border: 1px solid black; }"
+            "QTableWidget { gridline-color: black; }"
+            "QHeaderView::section { border: 1px solid red;}");
+    ui->tableWidget->setColumnWidth(0, 235);
 
     // QSlider
     ui->CannyLowThresholdSlider->setRange(0, 100);
@@ -76,11 +69,9 @@ GUI::~GUI() {
 }
 
 void GUI::setImage() {
-    /* 选择素材路径 */
     const QString dlgTitle   = "Select material File";
     const QString dlgOpenDir = "../data";
     const QString dlgFilter  = QLatin1String(";;");
-    // QString* dlgPtrSelFilter = &result.lastIoSettings.selectedFilter;
     materialDir              = QFileDialog::getOpenFileName(this, dlgTitle, dlgOpenDir, dlgFilter);
 
     if (materialDir == QString())
@@ -96,7 +87,6 @@ void GUI::saveImage() {
     QImage croppedPixmap = m_viewBox1->captureImage(materialDir);
     m_viewBox2->SetImage(croppedPixmap, materialDir);
 
-    // @TODO - 这里初步设计为 "按下Save按钮" 就同时显示2幅画面.
     m_viewBox3->SetImage(QImage(GraphicsView::m_Rect_vec[GraphicsView::m_Rect_vec.size() - 1]->Mat1.data,
                                 GraphicsView::m_Rect_vec[GraphicsView::m_Rect_vec.size() - 1]->Mat1.cols,
                                 GraphicsView::m_Rect_vec[GraphicsView::m_Rect_vec.size() - 1]->Mat1.rows,
@@ -106,18 +96,13 @@ void GUI::saveImage() {
 }
 
 QImage GUI::Mat2QImage(const cv::Mat& mat) {
-    // 8-bits unsigned, NO. OF CHANNELS = 1
     if (mat.type() == CV_8UC1) {
         QImage image(mat.data, mat.cols, mat.rows, mat.step, QImage::Format_Grayscale8);
         return image;
-    }
-    // 8-bits unsigned, NO. OF CHANNELS = 3
-    else if (mat.type() == CV_8UC3) {
+    } else if (mat.type() == CV_8UC3) {
         QImage image(mat.data, mat.cols, mat.rows, mat.step, QImage::Format_RGB888);
         return image.rgbSwapped();
-    }
-    // 8-bits unsigned, NO. OF CHANNELS = 4
-    else if (mat.type() == CV_8UC4) {
+    } else if (mat.type() == CV_8UC4) {
         QImage image(mat.data, mat.cols, mat.rows, mat.step, QImage::Format_ARGB32);
         return image;
     } else {
@@ -125,15 +110,6 @@ QImage GUI::Mat2QImage(const cv::Mat& mat) {
     }
 }
 
-//void GUI::GetConvexHull() {
-//    m_viewBox2->GenerateConvexHull();
-//}
-
-//void GUI::GetFineTuning() {
-//    m_viewBox2->StartFineTuning();
-//}
-
-// @brief - 添加`Rect`数据到`QTableWidget`中.
 void GUI::addRect(QRectF Rect) {
     ui->tableWidget->setRowCount(ui->tableWidget->rowCount() + 1);
     QTableWidgetItem* item = new QTableWidgetItem(QString("(%1, %2), (%3, %4)")
@@ -147,7 +123,6 @@ void GUI::addRect(QRectF Rect) {
 
 void GUI::refreshMask(int8_t LorH, size_t CannyThresholdValue) {
     if (materialDir == "" || GraphicsView::m_Rect_vec.size() == 0) {
-        // 即使没有图移动`sliter`控件, 也刷新`Threshold`
         switch (LorH) {
             case 0:
                 ui->CannyLowThresholdLabel->setText(QString("CannyLowThreshold = %1").arg(QString::number(CannyThresholdValue)));
